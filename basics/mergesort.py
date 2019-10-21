@@ -8,10 +8,12 @@ def debug_print(debug_msg=None, **kwargs):
 
 
 def mergesort(array):
+
     if len(array) <= 1:
         return array
 
     m = len(array) // 2
+
 
     left = mergesort(array[:m])
     right = mergesort(array[m:])
@@ -20,6 +22,7 @@ def mergesort(array):
 
 
 def merge(left, right):
+
     merged = []
 
     while len(left) > 0 and len(right) > 0:
@@ -32,6 +35,7 @@ def merge(left, right):
         merged += left
     else:
         merged += right
+
 
     return merged
 
@@ -46,6 +50,7 @@ if __name__ == "__main__":
         except ValueError as err:
             print("Invalid input.")
             quit(1)
+
 
     sorted_list = mergesort(value_list)
     print(sorted_list)
